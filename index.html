@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>c25-launch</title>
+<style>body{background:#0a0a1a;color:#e0e0ff;font-family:monospace;padding:20px;max-width:900px;margin:0 auto}h1{color:#7af}.badge{background:#1a3a1a;border:1px solid #4f4;padding:3px 10px;border-radius:20px;font-size:.8em;color:#4f4}pre{background:#111128;border:1px solid #333;border-radius:8px;padding:20px;overflow-x:auto;margin-top:20px}</style>
+</head><body><span class="badge">✅ CONFIRMED RAN</span><h1>c25-launch</h1><p style="color:#888">Lines: 36 | Deps: pip python  | C25 FacePrintPay</p><pre>#!/data/data/com.termux/files/usr/bin/bash
+set -euo pipefail
+echo "🚀 Sovereign AI Protocol v1 — Launch Sequence"
+echo "   Ensuring clean state..."
+# Kill old servers
+pkill -f "http.server" 2&gt;/dev/null || true
+# Ensure build dir exists
+mkdir -p ~/sovereign/build
+# Create minimal index.html if missing
+if [ ! -f ~/sovereign/build/index.html ]; then
+  cat &gt; ~/sovereign/build/index.html &lt;&lt; 'HTML'
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Sovereign AI Protocol&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;style&gt;body{background:#000;color:#0f0;font-family:monospace;padding:20px}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;🌌 Sovereign AI Protocol v1&lt;/h1&gt;</pre></body></html>
